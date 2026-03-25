@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&display=swap');
+
+:root {
+  --font-main: 'Outfit', sans-serif;
+  
+  /* Color Palette */
+  --bg-color: #ffffff;
+  --primary: #2563EB;   /* Bold Blue */
+  --secondary: #10B981; /* Vibrant Green */
+  --accent: #000000;    /* Solid Black */
+  --white: #ffffff;
+  
+  /* Border & Shadow */
+  --border-width: 4px;
+  --box-shadow: 8px 8px 0px 0px var(--accent);
+  --box-shadow-hover: 4px 4px 0px 0px var(--accent);
+  --border-radius: 0px; /* Sharp corners or very subtle 4px */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f8fafc;
+  background-image: radial-gradient(var(--accent) 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  color: var(--accent);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Neo-Brutalist Layout Components */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.neo-card {
+  background: var(--white);
+  border: var(--border-width) solid var(--accent);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.neo-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 12px 12px 0px 0px var(--accent);
+}
+
+.neo-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--primary);
+  color: var(--white);
+  border: var(--border-width) solid var(--accent);
+  box-shadow: var(--box-shadow);
+  padding: 0.75rem 1.5rem;
+  font-weight: 900;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.1s ease;
+}
+
+.neo-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px var(--accent);
+}
+
+.neo-button.secondary {
+  background: var(--secondary);
+}
+
+.neo-input {
+  width: 100%;
+  padding: 1rem;
+  border: var(--border-width) solid var(--accent);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  outline: none;
+}
+
+.neo-input:focus {
+  background-color: #f8fafc;
+}
+
+.neo-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-in {
+  animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
